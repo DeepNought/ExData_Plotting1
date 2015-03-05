@@ -27,7 +27,6 @@ df <- df[which(df[, "Date"] == "1/2/2007" | df[, "Date"] == "2/2/2007"), ]
 # add new column of Date/Time class from Date and Time columns
 df$DateTime <- strptime(paste(df$Date, df$Time), "%d/%m/%Y %H:%M:%S")
 
-par(bg = NA)
 png(file = "plot3.png", bg = NA)       # make background transparent
 plot(df$DateTime,
      as.numeric(df$Sub_metering_1),
